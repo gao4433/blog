@@ -1,5 +1,5 @@
 ## Gitblog
-My personal blog using issues and GitHub Actions
+记录我自学编程过程中做的笔记
 ## 友情链接
 | Name | Link | Desc | 
  | ---- | ---- | ---- |
