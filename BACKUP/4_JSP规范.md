@@ -47,7 +47,6 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
         <font style="color: red;font-size: 40px">Hello JSP !</font>
     </center>
 </html>
-
 ```
 
 ## 五、JSP中java命令的书写规则
@@ -204,8 +203,7 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
        String password = request.getParameter("password");
    %>
    
-   来访用户姓名:<%=userName%><br/>
-来访用户密码:<%=password%>
+   来访用户姓名:<%=userName%><br/>来访用户密码:<%=password%>
    ```
    
 2. JSP 文件内置对象：session
