@@ -22,15 +22,15 @@
 - [十九：Servlet规范扩展----Filter接口(过滤器接口)](#十九servlet规范扩展----filter接口过滤器接口)
 ## 一、Servlet规范介绍：
 
-1. servlet规范来自于JavaEE规范中的一种
+1. servlet 规范来自于 JavaEE 规范中的一种
 
 2. 作用：
 
-   - 在Servlet规范中，指定【动态资源文件】开发步骤
+   - 在 Servlet 规范中，指定【动态资源文件】开发步骤
 
-   - 在Servlet规范中，指定Http服务器调用动态资源文件规则
+   - 在 Servlet 规范中，指定 Http 服务器调用动态资源文件规则
 
-   - 在Servlet规范中，指定Http服务器管理动态资源文件实例对象规则
+   - 在 Servlet 规范中，指定 Http 服务器管理动态资源文件实例对象规则
 
 ## 二、Servlet接口实现类：
 
