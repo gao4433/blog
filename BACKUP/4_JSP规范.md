@@ -1,6 +1,7 @@
 # [JSP规范](https://github.com/Type-Gao/blog/issues/4)
 
 # JSP规范
+
 - [一、JSP规范介绍](#一jsp规范介绍)
 - [二、响应对象存在弊端](#二响应对象存在弊端)
 - [三、JSP文件优势](#三jsp文件优势)
@@ -10,6 +11,8 @@
 - [七、Servlet与JSP联合调用案例](#七servlet与jsp联合调用案例)
 - [八、JSP文件运算原理](#八jsp文件运算原理)
 - [九、HTML文件与JSP文件区别](#九html文件与jsp文件区别)
+
+
 ## 一、JSP规范介绍
 
 1.  来自于 JavaEE 规范中一种
@@ -47,6 +50,7 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
         <font style="color: red;font-size: 40px">Hello JSP !</font>
     </center>
 </html>
+
 ```
 
 ## 五、JSP中java命令的书写规则
@@ -203,17 +207,19 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
        String password = request.getParameter("password");
    %>
    
-   来访用户姓名:<%=userName%><br/>来访用户密码:<%=password%>
+   来访用户姓名:<%=userName%><br/>
+   来访用户密码:<%=password%>
    ```
    
 2. JSP 文件内置对象：session
+     
      类型：HttpSession
      
      作用：JSP 文件在运行时，可以通过 JSP 文件在运行时，可以通过 session 指向当前用户私人储物柜，添加或读取共享数据。	
      
      session_1.jsp 与  session_2.jsp 为同一个 用户/浏览器 提供服务。因此可以使用当前用户在服务端的私人储物柜进行数据共享：
      
-     ```
+     ```jsp
      <!--在session_1.jsp中将共享数据添加到用户私人储物柜中-->
      
      <%
@@ -222,17 +228,17 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
      %>
      ```
      
-     ```
+     ```jsp
      <!--在session_2.jsp中读取session_1.jsp添加的共享数据-->
      
      <%
      Integer value=(Integer) session.getAttribute("key1");
      %>
      session_2.jsp从当前用户session中读取数据:<%=value%>
-     ```
-
+    ```
+     
 3. JSP 文件内置对象 ：application;
-   	类型：ServletContext
+    类型：ServletContext
     作用：JSP 文件内置全局作用域对象。同一个网站中 Servlet 与 JSP，都可以通过当前网站的全局作用域对象实现数据共享。
 
    ```jsp
@@ -242,7 +248,7 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
    %>
    ```
    
-   ```
+   ```java
    //在OneServlet中可以读取到application中添加的共享数据
    public class OneServlet extends HttpServlet {
       @Override
@@ -250,16 +256,16 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
           ServletContext application = request.getServletContext();
           String value = (String) application.getAttribute("key1");
       }
-}
+   }
    ```
 ## 七、Servlet与JSP联合调用案例
 
 - **Servlet 与   JSP 分工:**
-      
-      Servlet： 负责处理业务并得到【处理结果】--------------------大厨  
-      
-      JSP：     不负责业务处理，主要任务将 Servlet 中【处理结果】写入到响应体----传菜员
-      
+  
+  Servlet：负责处理业务并得到【处理结果】--------------------大厨  
+  
+  JSP：不负责业务处理，主要任务将 Servlet 中【处理结果】写入到响应体----传菜员
+  
 - **Servlet 与  JSP 之间调用关系**
   
   Servlet 工作完毕后，一般通过【请求转发方式】向 Tomcat 申请调用 JSP
@@ -267,6 +273,7 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
 - **Servlet  与 JSP 之间如何实现数据共享**
   
   Servlet 将处理结果添加到【请求作用域对象】
+  
   JSP 文件在运行时从【请求作用域对象】得到处理结果
 
 ```java
@@ -343,17 +350,6 @@ JSP 在执行的时候，自动设置响应头属性，并将文件内容写入�
 
   C:*\Users\ [登录 windows系统用户角色名]\\.IntelliJIdea2018.3\system\tomcat\[网站工作空间]\work\Catalina\localhost\【网站别名】\org\apache\jsp*
 
-```jsp
-<%
-    int num1 =100;
-    int num2 =200;
-%>
-
-<!--out.write("num1的值:"); out.print(num1);-->
-num1的值:<%=num1%><br/> 
-<!--out.write("num1的值:"); out.print(num1);-->
-num2的值:<%=num2%><br/>
-```
 
 ## 九、HTML文件与JSP文件区别
 
