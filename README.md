@@ -1,5 +1,6 @@
+![top-image](http://gao8847.oss-cn-hangzhou.aliyuncs.com/image-20211125183130460.png)
 ## Gitblog
-My personal blog using issues and GitHub Actions
+个人博客，记录学习笔记。
 ## 友情链接
 | Name | Link | Desc | 
  | ---- | ---- | ---- |
